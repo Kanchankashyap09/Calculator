@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1 class="sr-only">Calculator</h1>
+    <div class="wrap">
+
+      <section class="calc" aria-label="Calculator">
+        <div class="display">
+          <button type="button" id="copy" class="copy" disabled>Copy</button>
+          <div id="sub" class="sub"></div>
+          <div id="main" class="main" data-size="m">0</div>
+        </div>
+        <p id="announce" class="sr-only" aria-live="polite"></p>
+
+        <div id="keys" class="keys">
+          <button type="button" class="key clear" data-key="clear" aria-label="All clear">AC</button>
+          <button type="button" class="key fn" data-key="(" aria-label="Open parenthesis">(</button>
+          <button type="button" class="key fn" data-key=")" aria-label="Close parenthesis">)</button>
+          <button type="button" class="key fn" data-key="back" aria-label="Backspace">⌫</button>
+
+          <button type="button" class="key" data-key="7">7</button>
+          <button type="button" class="key" data-key="8">8</button>
+          <button type="button" class="key" data-key="9">9</button>
+          <button type="button" class="key op" data-key="÷" aria-label="Divide">÷</button>
+
+          <button type="button" class="key" data-key="4">4</button>
+          <button type="button" class="key" data-key="5">5</button>
+          <button type="button" class="key" data-key="6">6</button>
+          <button type="button" class="key op" data-key="×" aria-label="Multiply">×</button>
+
+          <button type="button" class="key" data-key="1">1</button>
+          <button type="button" class="key" data-key="2">2</button>
+          <button type="button" class="key" data-key="3">3</button>
+          <button type="button" class="key op" data-key="−" aria-label="Subtract">−</button>
+
+          <button type="button" class="key fn" data-key="neg" aria-label="Change sign">±</button>
+          <button type="button" class="key" data-key="0">0</button>
+          <button type="button" class="key" data-key="." aria-label="Decimal point">.</button>
+          <button type="button" class="key op" data-key="+" aria-label="Add">+</button>
+
+          <button type="button" class="key fn" data-key="%" aria-label="Percent">%</button>
+          <button type="button" class="key eq" data-key="=" aria-label="Equals">=</button>
+        </div>
+      </section>
+
+      <aside class="history" aria-label="History">
+        <div class="history-head">
+          <h2>History</h2>
+          <button type="button" id="clear-history" class="link-btn" hidden>Clear</button>
+        </div>
+        <p id="history-empty" class="muted">Your calculations will appear here. Select one to keep working with its result.</p>
+        <ul id="history-list" class="history-list"></ul>
+        <p class="hint">Keyboard: 0–9, + − * /, ( ), %, Enter to calculate, Backspace to delete, Esc to clear.</p>
+      </aside>
+
+    </div>
+  </main>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
